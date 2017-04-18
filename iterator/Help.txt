@@ -1,0 +1,11 @@
+Internally all iterator implement the Iterator Interface, most of the time calling a foreach loop calls them
+automatically
+
+Method      |       Description
+------------------------------------
+rewind()    |   Moves iterator back to the first element
+key()       |   Returns the key of the current element which can be a number or a string
+current()   |   Returns the value of the current element
+next()      |   Moves to the next element
+valid()     |   Checks whether there is another element to move to
+
