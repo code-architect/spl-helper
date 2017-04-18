@@ -9,3 +9,19 @@ current()   |   Returns the value of the current element
 next()      |   Moves to the next element
 valid()     |   Checks whether there is another element to move to
 
+________________________________________________________________________________________________________________________
+
+Single Directory iterator
+
+
+DirectoryIterator                       |                  FilesystemIterator
+------------------------------------------------------------------------------
+1)Includes Dot files.                    | 1)Dot files are skipped, but .htaccess are treated normally.
+2)Works like an indexed array using.     | 2)Path name uses key for each element.
+  numbers to identify each element.      |
+3)Path not included in value.            | 3)Path included in the value.
+4)No configuration options.              | 4)Options can be set by using class constants.
+5)Array requires cloned objects.         | 5)Cloning not necessary for the current object to assign it to an array.
+
+
+
