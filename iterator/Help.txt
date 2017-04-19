@@ -46,8 +46,42 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 
 (fileInfo.php)
-It displays the relative path of every file in the directory.
-This value is being displayed by the toString Method of the object that represents the current element in the foreach loop
+1) It displays the relative path of every file in the directory.
+2) This value is being displayed by the toString Method of the object that represents the current element in the foreach loop.
+3) We can filter the given result by getting  getExtension() method
+4) We can get the absolute path of the file using the getRealPath() method.
+
+File and Directory Permissions
+------------------------------
+* isDir()           =>  Determines if the file is a directory
+* isFile()          =>  Checks if the file exists and is a regular file
+* isReadable()      =>  Checks if the file is readable
+* isWritable()      =>  Checks if the file is writable
+* isExecutable()    =>  Checks if the file is executable
+
+
+Filename and path
+-----------------
+* getFilename()     =>  Gets the filename only
+* getPath()         =>  Gets the relative path without trailing slash or filename
+* getPathname()     =>  Gets the relative path including filename
+* getRealPath()     =>  Gets the absolute path
+* getPathInfo()     =>  Gets an SplFileInfo object for the file's parent
+
+
+File Statistics and Type
+------------------------
+* getSize()         =>  Gets the file size in bytes
+* getATime()        =>  Gets timestamp for when file last accessed
+* getMTime()        =>  Gets timestamp for when contents modified
+* getExtension()    =>  Gets the filename extension (PHP 5.3.6+)
+* getType()         =>  Returns file, link or dir
+
+
+Access File Contents
+--------------------
+* OpenFile()        =>  Creates an SplFileObject
+
 
 
 
