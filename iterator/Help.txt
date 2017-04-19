@@ -1,3 +1,4 @@
+(directory.php)
 Internally all iterator implement the Iterator Interface, most of the time calling a foreach loop calls them
 automatically
 
@@ -11,6 +12,7 @@ valid()     |   Checks whether there is another element to move to
 
 ________________________________________________________________________________________________________________________
 
+(fileSystem.php)
 Single Directory iterator
 
 
@@ -22,6 +24,34 @@ DirectoryIterator                       |                  FilesystemIterator
 3)Path not included in value.            | 3)Path included in the value.
 4)No configuration options.              | 4)Options can be set by using class constants.
 5)Array requires cloned objects.         | 5)Cloning not necessary for the current object to assign it to an array.
+
+________________________________________________________________________________________________________________________
+
+(recursive_directory.php)
+1) To enter sub directories we need to use the RecursiveDirectoryIterator.
+2) We need to use constants from the parent class, that would be FilesystemIterator.
+3) When using a recursive iterator, we need to chain it to RecursiveIteratorIterator (its an iterator for an iterator, I know funny!)
+4) Pass the argument as the current iterator i.e. RecursiveDirectoryIterator instance we are using to RecursiveIteratorIterator.
+5) The common directories have only one level of sub directory but recursive directory iterator can handle multiple levels.
+6) By default recursive RecursiveIteratorIterator accesses only child elements, so directory names are omitted.
+7) To display the directory names we need to pass a second argument to the RecursiveIteratorIterator constructor.
+   Code:- $dir = new RecursiveIteratorIterator($dir,RecursiveIteratorIterator::SELF_FIRST);
+
+   To reverse the effect,
+   Code:- new RecursiveIteratorIterator($dir,RecursiveIteratorIterator::CHILD_FIRST);
+8) RecursiveIteratorIterator will keep going recursively no matter how many levels the file structure has, to limit the
+   number of levels, we can use the set setMaxDepth();
+   Code:- $dir->setMaxDepth(0);
+
+________________________________________________________________________________________________________________________
+
+(fileInfo.php)
+It displays the relative path of every file in the directory.
+This value is being displayed by the toString Method of the object that represents the current element in the foreach loop
+
+
+
+
 
 
 
